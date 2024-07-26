@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:ebook/book.dart';
+import 'package:ebook/pdf_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -165,31 +165,6 @@ class BookCard extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class PdfViewerScreen extends StatelessWidget {
-  final String url;
-
-  const PdfViewerScreen({super.key, required this.url});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('PDF Viewer'),
-      ),
-      body: Center(
-        child: PDFView(
-          filePath: url,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        label: const Text('Read'),
-        onPressed: () {},
-        icon: const Icon(Icons.book),
       ),
     );
   }
